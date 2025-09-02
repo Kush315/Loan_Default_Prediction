@@ -16,7 +16,7 @@ It helps in:
 ---
 
 ## 📂 Dataset
-We use the **Credit Default Dataset** (`train.csv` and `test.csv`).  
+-Source: https://www.kaggle.com/datasets/kushjain08/loan-default
 
 - **Features include**:  
   - `LIMIT_BAL` → Credit limit  
@@ -39,15 +39,19 @@ We use the **Credit Default Dataset** (`train.csv` and `test.csv`).
 - Handled **missing values**  
 - Encoded **categorical variables**  
 - Applied **scaling** with StandardScaler  
-- Performed **feature selection**  
+- Performed **feature selection**
 
-### 2. Model Training  
+### 2.Exploaratory Data Analysis (EDA)
+- Understand feature distributions and correlations.
+- Visualize default vs non-default patterns.
+
+### 3. Model Training  
 We trained three models:  
 - Logistic Regression  
 - LightGBM  
 - XGBoost  
 
-### 3. Model Evaluation  
+### 4. Model Evaluation  
 Metrics used:  
 - **ROC AUC**  
 - **Precision-Recall AUC (PR AUC)**  
@@ -58,11 +62,11 @@ Metrics used:
 - PR AUC bar plot  
 - F1-score bar plot  
 
-### 4. Best Model Selection  
+### 5. Best Model Selection  
 - The **best model** was chosen based on **ROC AUC / PR AUC**  
 - The trained model was **saved using joblib**  
 
-### 5. Predictions on Test Data  
+### 6. Predictions on Test Data  
 - Loaded the saved model  
 - Scaled the test dataset  
 - Generated predictions (`submission.csv`)  
@@ -70,11 +74,10 @@ Metrics used:
 ---
 
 ## 📊 Results
-- Logistic Regression: Baseline, interpretable  
-- LightGBM: High performance, fast training  
-- XGBoost: Competitive accuracy with slightly higher complexity  
-
-The **best model (LightGBM/XGBoost depending on ROC AUC/PR AUC)** was selected for final predictions.
+- Best performing model: XGBoost
+- ROC AUC: 0.778478
+- PR AUC:  0.276089
+-  F1: 0.078578
 
 ---
 
